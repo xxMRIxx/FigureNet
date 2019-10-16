@@ -1,4 +1,4 @@
-MSSQL нету, использовал SQLite
+п»їMSSQL РЅРµС‚Сѓ, РёСЃРїРѕР»СЊР·РѕРІР°Р» SQLite
 
 SELECT a.Name, t.Name
 FROM Article a
@@ -9,15 +9,15 @@ CREATE TABLE "Article" ( `Id` INTEGER NOT NULL UNIQUE, `Name` TEXT, PRIMARY KEY(
 CREATE TABLE `Tags` ( `Id` INTEGER NOT NULL UNIQUE, `Name` TEXT, PRIMARY KEY(`Id`) )
 CREATE TABLE "TagsId" ( `Id_Arcticle` INTEGER, `Id_Tags` INTEGER, constraint fk_products_map_product_id foreign key (Id_Arcticle) references Article(Id), constraint fk_products_map_category_id foreign key (Id_Tags) references Tags(Id) )
 
-insert into Tags (Id, Name) values (1,'Тег1');
-insert into Tags (Id, Name) values (2,'Тег2');
+insert into Tags (Id, Name) values (1,'РўРµРі1');
+insert into Tags (Id, Name) values (2,'РўРµРі2');
 
-insert into Article (Id, Name) values (1,'Тест1');
-insert into Article (Id, Name) values (2,'Тест2');
-insert into Article (Id, Name) values (3,'Тест3');
-insert into Article (Id, Name) values (4,'Тест4');
-insert into Article (Id, Name) values (5,'Тест5');
-insert into Article (Id, Name) values (6,'Тест6');
+insert into Article (Id, Name) values (1,'РўРµСЃС‚1');
+insert into Article (Id, Name) values (2,'РўРµСЃС‚2');
+insert into Article (Id, Name) values (3,'РўРµСЃС‚3');
+insert into Article (Id, Name) values (4,'РўРµСЃС‚4');
+insert into Article (Id, Name) values (5,'РўРµСЃС‚5');
+insert into Article (Id, Name) values (6,'РўРµСЃС‚6');
 
 insert into TagsId (Id_Arcticle, Id_Tags) values (1,1);
 insert into TagsId (Id_Arcticle, Id_Tags) values (2,1);
