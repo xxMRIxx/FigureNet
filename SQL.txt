@@ -1,0 +1,30 @@
+MSSQL нету, использовал SQLite
+
+SELECT a.Name, t.Name
+FROM Article a
+LEFT JOIN TagsId tp ON a.Id = tp.Id_Arcticle 
+LEFT JOIN Tags t ON tp.Id_Tags = t.Id 
+
+CREATE TABLE "Article" ( `Id` INTEGER NOT NULL UNIQUE, `Name` TEXT, PRIMARY KEY(`Id`) )
+CREATE TABLE `Tags` ( `Id` INTEGER NOT NULL UNIQUE, `Name` TEXT, PRIMARY KEY(`Id`) )
+CREATE TABLE "TagsId" ( `Id_Arcticle` INTEGER, `Id_Tags` INTEGER, constraint fk_products_map_product_id foreign key (Id_Arcticle) references Article(Id), constraint fk_products_map_category_id foreign key (Id_Tags) references Tags(Id) )
+
+insert into Tags (Id, Name) values (1,'Тег1');
+insert into Tags (Id, Name) values (2,'Тег2');
+
+insert into Article (Id, Name) values (1,'Тест1');
+insert into Article (Id, Name) values (2,'Тест2');
+insert into Article (Id, Name) values (3,'Тест3');
+insert into Article (Id, Name) values (4,'Тест4');
+insert into Article (Id, Name) values (5,'Тест5');
+insert into Article (Id, Name) values (6,'Тест6');
+
+insert into TagsId (Id_Arcticle, Id_Tags) values (1,1);
+insert into TagsId (Id_Arcticle, Id_Tags) values (2,1);
+insert into TagsId (Id_Arcticle, Id_Tags) values (3,1);
+insert into TagsId (Id_Arcticle, Id_Tags) values (4,2);
+insert into TagsId (Id_Arcticle, Id_Tags) values (5,2);
+insert into TagsId (Id_Arcticle, Id_Tags) values (6,2);
+
+select * from Article
+select * from Tags
