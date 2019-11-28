@@ -1,4 +1,4 @@
-﻿MSSQL нету, использовал SQLite
+MSSQL нету, использовал SQLite3.
 
 SELECT a.Name, t.Name
 FROM Article a
